@@ -71,9 +71,9 @@
             register: function() {
                 if (this.validateForm()) {
                     let data = {
-                        Email: this.email,
-                        Username: this.username,
-                        Password: this.password,
+                        email: this.email,
+                        username: this.username,
+                        password: this.password,
                     };
                     this.$store.dispatch('register', data)
                         .then(() => {
