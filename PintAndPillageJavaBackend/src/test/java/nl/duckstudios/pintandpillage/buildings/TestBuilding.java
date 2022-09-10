@@ -31,7 +31,7 @@ public class TestBuilding {
     @Mock
     private Village villageMock;
     private MockBuilding buildingUnderTesting;
-    private ResourceHelper resourceHelper = new ResourceHelper();
+    private final ResourceHelper resourceHelper = new ResourceHelper();
 
     @Spy
     private ResourceManager spyResourceManger = new ResourceManager();
