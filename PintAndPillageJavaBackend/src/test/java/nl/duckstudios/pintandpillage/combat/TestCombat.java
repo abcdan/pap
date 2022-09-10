@@ -4,9 +4,8 @@ import nl.duckstudios.pintandpillage.Exceptions.AttackingConditionsNotMetExcepti
 import nl.duckstudios.pintandpillage.Exceptions.BuildingConditionsNotMetException;
 import nl.duckstudios.pintandpillage.entity.Village;
 import nl.duckstudios.pintandpillage.entity.VillageUnit;
-import nl.duckstudios.pintandpillage.entity.production.Axe;
-import nl.duckstudios.pintandpillage.entity.production.Jarl;
-import nl.duckstudios.pintandpillage.entity.production.Spear;
+import nl.duckstudios.pintandpillage.entity.production.*;
+import nl.duckstudios.pintandpillage.model.UnitType;
 import nl.duckstudios.pintandpillage.service.CombatService;
 import org.hamcrest.Matchers;
 import org.hamcrest.core.StringContains;
@@ -14,9 +13,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.AdditionalAnswers;
 import org.mockito.Mock;
 import org.mockito.Spy;
+import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.stubbing.Answer;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -28,6 +30,9 @@ import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -54,7 +59,33 @@ public class TestCombat {
         attackingVillageUnits.add(new VillageUnit(new Spear(), amountOfUnitsPerType));
         attackingVillageUnits.add(new VillageUnit(new Axe(), amountOfUnitsPerType));
         attackingVillageUnits.add(new VillageUnit(new Jarl(), amountOfUnitsPerType));
-//        when(attackingVillage.getUnitsInVillage()).thenReturn(attackingVillageUnits);
+
+//        when(this.attackingVillage.getUnitInVillage(any(UnitType.class))).thenAnswer(
+//                (Answer<VillageUnit>) invocation -> switch (invocation.getArgument(0, UnitType.class)) {
+//                    case Spear -> new VillageUnit(new Spear(), amountOfUnitsPerType);
+//                    case Axe -> new VillageUnit(new Axe(), amountOfUnitsPerType);
+//                    case Jarl -> new VillageUnit(new Jarl(), amountOfUnitsPerType);
+//                    case TransportShip -> new VillageUnit(new TransportShip(), amountOfUnitsPerType);
+//                    case BattleShip -> new VillageUnit(new BattleShip(), amountOfUnitsPerType);
+//                    case DefenceShip -> new VillageUnit(new DefenceShip(), amountOfUnitsPerType);
+//                    case Bow -> new VillageUnit(new Bow(), amountOfUnitsPerType);
+//                    case Shield -> new VillageUnit(new Shield(), amountOfUnitsPerType);
+//                    default -> null;
+//                        });
+                    //                (i -> {
+//            UnitType ut = i.getArgument(0);
+//            return switch (ut) {
+//                case Spear -> new VillageUnit(new Spear(), amountOfUnitsPerType);
+//                case Axe -> new VillageUnit(new Axe(), amountOfUnitsPerType);
+//                case Jarl -> new VillageUnit(new Jarl(), amountOfUnitsPerType);
+//                case TransportShip -> new VillageUnit(new TransportShip(), amountOfUnitsPerType);
+//                case BattleShip -> new VillageUnit(new BattleShip(), amountOfUnitsPerType);
+//                case DefenceShip -> new VillageUnit(new DefenceShip(), amountOfUnitsPerType);
+//                case Bow -> new VillageUnit(new Bow(), amountOfUnitsPerType);
+//                case Shield -> new VillageUnit(new Shield(), amountOfUnitsPerType);
+//                default -> null;
+//            };
+
     }
 
     @Test
