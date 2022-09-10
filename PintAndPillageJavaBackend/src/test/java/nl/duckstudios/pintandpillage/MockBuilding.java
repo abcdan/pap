@@ -1,4 +1,4 @@
-package nl.duckstudios.pintandpillage.buildings;
+package nl.duckstudios.pintandpillage;
 
 import nl.duckstudios.pintandpillage.entity.buildings.Building;
 import nl.duckstudios.pintandpillage.helper.Manager;
