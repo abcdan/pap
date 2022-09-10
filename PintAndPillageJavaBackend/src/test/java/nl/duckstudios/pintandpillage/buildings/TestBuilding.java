@@ -55,9 +55,6 @@ public class TestBuilding {
         when(this.villageMock.getVillageResources()).thenReturn(this.resourceHelper.generateResource(ResourceType.Stone, 10));
         when(this.villageMock.hasEnoughPopulation(anyInt())).thenReturn(true);
 
-
-        // Mock the population and add up all the populations of the houses
-
     }
 
 
