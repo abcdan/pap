@@ -55,10 +55,24 @@ public class TestCombat {
         this.defendingVillage = new Village();
     }
     public void setupAttackingVillage(int amountOfUnitsPerType) {
-        Set<VillageUnit> attackingVillageUnits = new HashSet<>();
-        attackingVillageUnits.add(new VillageUnit(new Spear(), amountOfUnitsPerType));
-        attackingVillageUnits.add(new VillageUnit(new Axe(), amountOfUnitsPerType));
-        attackingVillageUnits.add(new VillageUnit(new Jarl(), amountOfUnitsPerType));
+
+        attackingVillage.addUnit(new Spear(), amountOfUnitsPerType);
+        attackingVillage.addUnit(new Axe(), amountOfUnitsPerType);
+        attackingVillage.addUnit(new Jarl(), amountOfUnitsPerType);
+        attackingVillage.addUnit(new Bow(), amountOfUnitsPerType);
+        attackingVillage.addUnit(new DefenceShip(), amountOfUnitsPerType);
+        attackingVillage.addUnit(new Shield(), amountOfUnitsPerType);
+        attackingVillage.addUnit(new TransportShip(), amountOfUnitsPerType);
+        attackingVillage.addUnit(new BattleShip(), amountOfUnitsPerType);
+//        Set<VillageUnit> attackingVillageUnits = new HashSet<>();
+//        attackingVillageUnits.add(new VillageUnit(new Spear(), amountOfUnitsPerType));
+//        attackingVillageUnits.add(new VillageUnit(new Axe(), amountOfUnitsPerType));
+//        attackingVillageUnits.add(new VillageUnit(new Jarl(), amountOfUnitsPerType));
+//        attackingVillageUnits.add(new VillageUnit(new Bow(), amountOfUnitsPerType));
+//        attackingVillageUnits.add(new VillageUnit(new DefenceShip(), amountOfUnitsPerType));
+//        attackingVillageUnits.add(new VillageUnit(new Shield(), amountOfUnitsPerType));
+//        attackingVillageUnits.add(new VillageUnit(new TransportShip(), amountOfUnitsPerType));
+//        attackingVillageUnits.add(new VillageUnit(new BattleShip(), amountOfUnitsPerType));
 
 //        when(this.attackingVillage.getUnitInVillage(any(UnitType.class))).thenAnswer(
 //                (Answer<VillageUnit>) invocation -> switch (invocation.getArgument(0, UnitType.class)) {
@@ -96,6 +110,11 @@ public class TestCombat {
         enoughAttackingUnits.add(new VillageUnit(new Spear(), 11));
         enoughAttackingUnits.add(new VillageUnit(new Axe(), 11));
         enoughAttackingUnits.add(new VillageUnit(new Jarl(), 11));
+        enoughAttackingUnits.add(new VillageUnit(new Bow(), 11));
+        enoughAttackingUnits.add(new VillageUnit(new DefenceShip(), 11));
+        enoughAttackingUnits.add(new VillageUnit(new Shield(), 11));
+        enoughAttackingUnits.add(new VillageUnit(new TransportShip(), 11));
+        enoughAttackingUnits.add(new VillageUnit(new BattleShip(), 11));
 
         List<VillageUnit> arr = new ArrayList<>(enoughAttackingUnits);
 
@@ -116,7 +135,7 @@ public class TestCombat {
     // TODO: Naming convention
     @Test
     public void throwErrorBecauseNotEnoughUnits() {
-        setupAttackingVillage(12);
+        setupAttackingVillage(10);
 
         Set<VillageUnit> notEnoughVillageUnits = new HashSet<>();
         notEnoughVillageUnits.add(new VillageUnit(new Spear(), 11));
