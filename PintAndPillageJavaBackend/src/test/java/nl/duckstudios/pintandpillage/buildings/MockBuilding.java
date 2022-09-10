@@ -1,7 +1,7 @@
-package nl.duckstudios.pintandpillage;
+package nl.duckstudios.pintandpillage.buildings;
 
 import nl.duckstudios.pintandpillage.entity.buildings.Building;
-import nl.duckstudios.pintandpillage.helper.Manager;
+import nl.duckstudios.pintandpillage.helper.ResourceManager;
 
 public class MockBuilding extends Building
 {
@@ -11,7 +11,7 @@ public class MockBuilding extends Building
         super.setConstructionTimeSeconds(10);
     }
 
-    public void setResourceManager(Manager resourceManager){
+    public void setResourceManager(ResourceManager resourceManager){
         super.resourceManager = resourceManager;
     }
 }

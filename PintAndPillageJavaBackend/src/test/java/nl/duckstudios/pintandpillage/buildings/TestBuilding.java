@@ -1,11 +1,9 @@
 package nl.duckstudios.pintandpillage.buildings;
 
 import nl.duckstudios.pintandpillage.Exceptions.BuildingConditionsNotMetException;
-import nl.duckstudios.pintandpillage.helper.Manager;
 import nl.duckstudios.pintandpillage.helper.ResourceManager;
 import nl.duckstudios.pintandpillage.testHelpers.ResourceHelper;
 import nl.duckstudios.pintandpillage.entity.Village;
-import nl.duckstudios.pintandpillage.entity.buildings.Building;
 import nl.duckstudios.pintandpillage.model.ResourceType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
@@ -36,7 +34,7 @@ public class TestBuilding {
     private ResourceHelper resourceHelper = new ResourceHelper();
 
     @Spy
-    private Manager spyResourceManger = new ResourceManager();
+    private ResourceManager spyResourceManger = new ResourceManager();
 
     @BeforeEach
     void initMockBuilding(){
