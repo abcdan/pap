@@ -14,4 +14,6 @@ public class MockBuilding extends Building
     public void setResourceManager(ResourceManager resourceManager){
         super.resourceManager = resourceManager;
     }
+
+
 }
