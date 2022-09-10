@@ -64,59 +64,25 @@ public class TestCombat {
         attackingVillage.addUnit(new Shield(), amountOfUnitsPerType);
         attackingVillage.addUnit(new TransportShip(), amountOfUnitsPerType);
         attackingVillage.addUnit(new BattleShip(), amountOfUnitsPerType);
-//        Set<VillageUnit> attackingVillageUnits = new HashSet<>();
-//        attackingVillageUnits.add(new VillageUnit(new Spear(), amountOfUnitsPerType));
-//        attackingVillageUnits.add(new VillageUnit(new Axe(), amountOfUnitsPerType));
-//        attackingVillageUnits.add(new VillageUnit(new Jarl(), amountOfUnitsPerType));
-//        attackingVillageUnits.add(new VillageUnit(new Bow(), amountOfUnitsPerType));
-//        attackingVillageUnits.add(new VillageUnit(new DefenceShip(), amountOfUnitsPerType));
-//        attackingVillageUnits.add(new VillageUnit(new Shield(), amountOfUnitsPerType));
-//        attackingVillageUnits.add(new VillageUnit(new TransportShip(), amountOfUnitsPerType));
-//        attackingVillageUnits.add(new VillageUnit(new BattleShip(), amountOfUnitsPerType));
-
-//        when(this.attackingVillage.getUnitInVillage(any(UnitType.class))).thenAnswer(
-//                (Answer<VillageUnit>) invocation -> switch (invocation.getArgument(0, UnitType.class)) {
-//                    case Spear -> new VillageUnit(new Spear(), amountOfUnitsPerType);
-//                    case Axe -> new VillageUnit(new Axe(), amountOfUnitsPerType);
-//                    case Jarl -> new VillageUnit(new Jarl(), amountOfUnitsPerType);
-//                    case TransportShip -> new VillageUnit(new TransportShip(), amountOfUnitsPerType);
-//                    case BattleShip -> new VillageUnit(new BattleShip(), amountOfUnitsPerType);
-//                    case DefenceShip -> new VillageUnit(new DefenceShip(), amountOfUnitsPerType);
-//                    case Bow -> new VillageUnit(new Bow(), amountOfUnitsPerType);
-//                    case Shield -> new VillageUnit(new Shield(), amountOfUnitsPerType);
-//                    default -> null;
-//                        });
-                    //                (i -> {
-//            UnitType ut = i.getArgument(0);
-//            return switch (ut) {
-//                case Spear -> new VillageUnit(new Spear(), amountOfUnitsPerType);
-//                case Axe -> new VillageUnit(new Axe(), amountOfUnitsPerType);
-//                case Jarl -> new VillageUnit(new Jarl(), amountOfUnitsPerType);
-//                case TransportShip -> new VillageUnit(new TransportShip(), amountOfUnitsPerType);
-//                case BattleShip -> new VillageUnit(new BattleShip(), amountOfUnitsPerType);
-//                case DefenceShip -> new VillageUnit(new DefenceShip(), amountOfUnitsPerType);
-//                case Bow -> new VillageUnit(new Bow(), amountOfUnitsPerType);
-//                case Shield -> new VillageUnit(new Shield(), amountOfUnitsPerType);
-//                default -> null;
-//            };
 
     }
 
     @Test
     public void hasEnoughUnitsToAttack() {
-        setupAttackingVillage(1);
+        setupAttackingVillage(100);
 
-        Set<VillageUnit> enoughAttackingUnits = new HashSet<>();
-        enoughAttackingUnits.add(new VillageUnit(new Spear(), 11));
-        enoughAttackingUnits.add(new VillageUnit(new Axe(), 11));
-        enoughAttackingUnits.add(new VillageUnit(new Jarl(), 11));
-        enoughAttackingUnits.add(new VillageUnit(new Bow(), 11));
-        enoughAttackingUnits.add(new VillageUnit(new DefenceShip(), 11));
-        enoughAttackingUnits.add(new VillageUnit(new Shield(), 11));
-        enoughAttackingUnits.add(new VillageUnit(new TransportShip(), 11));
-        enoughAttackingUnits.add(new VillageUnit(new BattleShip(), 11));
 
-        List<VillageUnit> arr = new ArrayList<>(enoughAttackingUnits);
+        Set<VillageUnit> attackedVillageUnits = new HashSet<>();
+        attackedVillageUnits.add(new VillageUnit(new Spear(), 11));
+        attackedVillageUnits.add(new VillageUnit(new Axe(), 11));
+        attackedVillageUnits.add(new VillageUnit(new Jarl(), 11));
+        attackedVillageUnits.add(new VillageUnit(new Bow(), 11));
+        attackedVillageUnits.add(new VillageUnit(new DefenceShip(), 11));
+        attackedVillageUnits.add(new VillageUnit(new Shield(), 11));
+        attackedVillageUnits.add(new VillageUnit(new TransportShip(), 11));
+        attackedVillageUnits.add(new VillageUnit(new BattleShip(), 11));
+
+        List<VillageUnit> arr = new ArrayList<>(attackedVillageUnits);
 
         assertDoesNotThrow(() -> combatService.checkHasEnoughUnitsToAttack(arr, attackingVillage));
 
@@ -137,12 +103,12 @@ public class TestCombat {
     public void throwErrorBecauseNotEnoughUnits() {
         setupAttackingVillage(10);
 
-        Set<VillageUnit> notEnoughVillageUnits = new HashSet<>();
-        notEnoughVillageUnits.add(new VillageUnit(new Spear(), 11));
-        notEnoughVillageUnits.add(new VillageUnit(new Axe(), 11));
-        notEnoughVillageUnits.add(new VillageUnit(new Jarl(), 11));
+        Set<VillageUnit> attackedVillageUnits = new HashSet<>();
+        attackedVillageUnits.add(new VillageUnit(new Spear(), 11));
+        attackedVillageUnits.add(new VillageUnit(new Axe(), 11));
+        attackedVillageUnits.add(new VillageUnit(new Jarl(), 11));
 
-        List<VillageUnit> arr = new ArrayList<>(notEnoughVillageUnits);
+        List<VillageUnit> arr = new ArrayList<>(attackedVillageUnits);
 
         AttackingConditionsNotMetException thrown = assertThrows( AttackingConditionsNotMetException.class,
                 () -> combatService.checkHasEnoughUnitsToAttack(arr, attackingVillage));
