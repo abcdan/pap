@@ -1,24 +1,22 @@
 package nl.duckstudios.pintandpillage.combat;
 
 import nl.duckstudios.pintandpillage.Exceptions.AttackingConditionsNotMetException;
-import nl.duckstudios.pintandpillage.Exceptions.BuildingConditionsNotMetException;
 import nl.duckstudios.pintandpillage.entity.Village;
 import nl.duckstudios.pintandpillage.entity.VillageUnit;
 import nl.duckstudios.pintandpillage.entity.production.*;
+import nl.duckstudios.pintandpillage.model.AttackUnitData;
+import nl.duckstudios.pintandpillage.model.AttackVillageData;
 import nl.duckstudios.pintandpillage.model.UnitType;
 import nl.duckstudios.pintandpillage.service.CombatService;
-import org.hamcrest.Matchers;
+import nl.duckstudios.pintandpillage.testHelpers.AttackVillageDataHelper;
 import org.hamcrest.core.StringContains;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.AdditionalAnswers;
 import org.mockito.Mock;
 import org.mockito.Spy;
-import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.stubbing.Answer;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -26,14 +24,8 @@ import java.util.List;
 import java.util.Set;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.contains;
-import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 @Tag("Combat")
@@ -114,6 +106,21 @@ public class TestCombat {
                 () -> combatService.checkHasEnoughUnitsToAttack(arr, attackingVillage));
 
         assertThat(thrown.getMessage(), new StringContains("Not enough"));
+    }
+
+    @Test
+    public void test_convertToVillageUnits() {
+
+        List<AttackUnitData> attackUnitDataList = new ArrayList<>();
+        attackUnitDataList.add(new AttackUnitData(UnitType.Spear, 10));
+
+        AttackVillageDataHelper data = new AttackVillageDataHelper(attackUnitDataList, 10, 10);
+
+        System.out.println(data.units);
+        List<VillageUnit> villageUnits = combatService.convertToVillageUnits(data);
+
+        assertThat(villageUnits.get(0).getUnit().getUnitName().toString(), new StringContains("Spear"));
+
     }
 
     // TODO: attackingVillage.getUnitInVillage(attackingUnit.getUnit().getUnitName()).setAmount(unitInVillage.getAmount() - attackingUnit.getAmount());
