@@ -22,6 +22,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.*;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -115,6 +116,20 @@ public class TestCombat {
 
 //        AttackVillageData attackVillageDataHelper = new AttackVillageDataHelper(attackUnitDataList, 10, 10);
 
+        AttackVillageData avd = new AttackVillageData();
+        avd.setToVillageId(1);
+        avd.setUnits(attackUnitDataList);
+        avd.setFromVillageId(2);
+
+        List<VillageUnit> villageUnits = combatService.convertToVillageUnits(avd);
+
+        assertThat(villageUnits.get(0).getUnit().getUnitName().toString(), new StringContains("Spear"));
+    }
+
+    @Test
+    public void test_concertNotEnoughUnits() {
+
+        List<AttackUnitData> attackUnitDataList = new ArrayList<>();
 
         AttackVillageData avd = new AttackVillageData();
         avd.setToVillageId(1);
@@ -122,12 +137,11 @@ public class TestCombat {
         avd.setFromVillageId(2);
 
 
-        List<VillageUnit> villageUnits = combatService.convertToVillageUnits(avd);
+        AttackingConditionsNotMetException thrown = assertThrows( AttackingConditionsNotMetException.class,
+                () ->combatService.convertToVillageUnits(avd));
 
-        assertThat(villageUnits.get(0).getUnit().getUnitName().toString(), new StringContains("Spear"));
+        assertThat(thrown.getMessage(), is("To attack you need to send at least one unit"));
 
     }
 
-    // TODO: attackingVillage.getUnitInVillage(attackingUnit.getUnit().getUnitName()).setAmount(unitInVillage.getAmount() - attackingUnit.getAmount());
-    // FF een spy d'r op knallen om te zien of 't werkt.
 }
