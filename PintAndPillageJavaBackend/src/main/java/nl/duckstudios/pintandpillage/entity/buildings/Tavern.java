@@ -22,12 +22,14 @@ public class Tavern extends ResourceBuilding {
         super.setRequiresResources(ResourceType.Hop);
     }
 
-    //    private int updateResourcesPerHour() {
-//        return (int)(10 + 6 * Math.pow(super.getLevel(), 1.15));
-//    }
+
+    // TODO: Changed: Zelfde als bij de barracks, maar dan met beer en hop
     private int updateResourcesPerHour() {
-        return 300;
+        return (int) (10 + 6 * Math.pow(super.getLevel(), 1.15));
     }
+//    private int updateResourcesPerHour() {
+//        return 300;
+//    }
 
     @Override
     public void updateBuilding() {

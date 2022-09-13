@@ -113,6 +113,7 @@ public class Village {
             put(ResourceType.Wood.name(), 500);
             put(ResourceType.Beer.name(), 500);
             put(ResourceType.Hop.name(), 0); // TODO: Changed: Added hop as default value
+            put(ResourceType.Beer.name(), 0); // TODO: Changed: Added hop as default value
         }
     };
 
