@@ -112,6 +112,7 @@ public class Village {
             put(ResourceType.Stone.name(), 500);
             put(ResourceType.Wood.name(), 500);
             put(ResourceType.Beer.name(), 500);
+            put(ResourceType.Hop.name(), 0); // TODO: Changed: Added hop as default value
         }
     };
 
@@ -302,7 +303,7 @@ public class Village {
                 new House(),
                 new Mine(),
                 new Farm(),
-                new Lumberyard(),
+                new Farms(),
                 new Tavern(),
                 new Wall(),
                 new DefenceTower(),

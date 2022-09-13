@@ -9,14 +9,14 @@ import javax.persistence.Entity;
 import java.util.HashMap;
 
 @Entity
-public class Lumberyard extends ResourceBuilding {
+public class Farms extends ResourceBuilding {
 
 
     @Getter
     @Setter
     public String name = "Lumberyard";
 
-    public Lumberyard() {
+    public Farms() {
         this.updateBuilding();
         super.setDescription("Produces wood for your village");
         super.setGeneratesResource(ResourceType.Wood);
@@ -42,7 +42,7 @@ public class Lumberyard extends ResourceBuilding {
         super.setResourcesPerHour(this.updateResourcesPerHour());
         super.setResourcesRequiredLevelUp(new HashMap<>() {
             {
-                int level = Lumberyard.super.getLevel();
+                int level = Farms.super.getLevel();
                 put(ResourceType.Stone.name(), level * 25 + 25);
             }
         });

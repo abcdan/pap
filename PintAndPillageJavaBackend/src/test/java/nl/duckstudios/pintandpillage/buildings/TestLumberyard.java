@@ -1,7 +1,7 @@
 package nl.duckstudios.pintandpillage.buildings;
 
 import nl.duckstudios.pintandpillage.entity.Village;
-import nl.duckstudios.pintandpillage.entity.buildings.Lumberyard;
+import nl.duckstudios.pintandpillage.entity.buildings.Farms;
 import nl.duckstudios.pintandpillage.testHelpers.ResourceHelper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
@@ -24,7 +24,7 @@ public class TestLumberyard {
     Village villageMock;
 
     @Mock
-    Lumberyard testingLumberyard;
+    Farms testingLumberyard;
 
     private final ResourceHelper resourceHelper = new ResourceHelper();
     @BeforeEach
@@ -34,8 +34,8 @@ public class TestLumberyard {
         this.testingLumberyard = createLumberyard(1);
     }
 
-    private Lumberyard createLumberyard(int level) {
-        Lumberyard lumberyard = new Lumberyard();
+    private Farms createLumberyard(int level) {
+        Farms lumberyard = new Farms();
         lumberyard.setLevel(level);
         lumberyard.setConstructionTimeSeconds(0);
         lumberyard.setVillage(villageMock);

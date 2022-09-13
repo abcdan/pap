@@ -31,7 +31,7 @@ public class BuildingFactory {
                 return barracks;
             }
             case "Lumberyard" -> {
-                Lumberyard lumberyard = new Lumberyard();
+                Farms lumberyard = new Farms();
                 lumberyard.setPosition(position);
                 return lumberyard;
             }
