@@ -47,8 +47,6 @@ public class TestLumberyard {
 
     @Test
     public void increasedWoodProductionWhenBuildingLumberyard() {
-
-
         villageMock.createBuilding(createLumberyard(1));
 
         Map<String, Integer> resourcesPerHour = villageMock.getResourcesPerHour();
@@ -61,7 +59,6 @@ public class TestLumberyard {
 
     @Test
     public void increasedWoodProductionWithMultipleLumberyards() {
-
         villageMock.createBuilding(createLumberyard(1));
         villageMock.createBuilding(createLumberyard(1));
         villageMock.createBuilding(createLumberyard(1));
