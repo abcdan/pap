@@ -50,10 +50,10 @@ public class TestMines {
 
         Map<String, Integer> resourcesPerHour = villageMock.getResourcesPerHour();
 
-        int ACTUAL_WOOD_PRODUCTION = resourcesPerHour.get("Stone");
-        int EXPECTED_WOOD_PRODUCTION = 32;
+        int ACTUAL_STONE_PRODUCTION = resourcesPerHour.get("Stone");
+        int EXPECTED_STONE_PRODUCTION = 32;
 
-        assertThat(ACTUAL_WOOD_PRODUCTION, is(EXPECTED_WOOD_PRODUCTION));
+        assertThat(ACTUAL_STONE_PRODUCTION, is(EXPECTED_STONE_PRODUCTION));
     }
 
     @Test
@@ -85,7 +85,7 @@ public class TestMines {
 
     }
     @Test
-    public void noIncreasingStoneWithoutLumberyards() {
+    public void noIncreasingStoneWithoutMines() {
         villageMock.updateVillageState();
         int ACTUAL_STONE_PRODUCTION = villageMock.getVillageResources().get("Stone");
         int EXPECTED_STONE_PRODUCTION = 500; // 500 is the base value
