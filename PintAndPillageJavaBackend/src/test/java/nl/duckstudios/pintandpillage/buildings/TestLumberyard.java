@@ -77,15 +77,24 @@ public class TestLumberyard {
     @Test
     public void collectAfterHourToSeeProduction() {
 
-            LocalDateTime oneHourBack = LocalDateTime.now().minusHours(1);
-            this.testingLumberyard.setLastCollected(oneHourBack);
-            this.testingLumberyard.collectResources();
+        LocalDateTime oneHourBack = LocalDateTime.now().minusHours(1);
+        this.testingLumberyard.setLastCollected(oneHourBack);
+        this.testingLumberyard.collectResources();
 
-            int ACTUAL_WOOD_PRODUCTION = villageMock.getVillageResources().get("Wood");
+        int ACTUAL_WOOD_PRODUCTION = villageMock.getVillageResources().get("Wood");
 
-            int EXPECTED_WOOD_PRODUCTION = 520;
+        int EXPECTED_WOOD_PRODUCTION = 520;
 
-            assertThat(ACTUAL_WOOD_PRODUCTION, is(EXPECTED_WOOD_PRODUCTION));
+        assertThat(ACTUAL_WOOD_PRODUCTION, is(EXPECTED_WOOD_PRODUCTION));
+
+    }
+    @Test
+    public void noIncreasingWoodWithoutLumberyards() {
+        villageMock.updateVillageState();
+        int ACTUAL_WOOD_PRODUCTION = villageMock.getVillageResources().get("Wood");
+        int EXPECTED_WOOD_PRODUCTION = 500; // 500 is the base value
+
+        assertThat(ACTUAL_WOOD_PRODUCTION, is(EXPECTED_WOOD_PRODUCTION));
 
     }
 }
