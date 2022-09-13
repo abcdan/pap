@@ -45,6 +45,16 @@ public class TestCombat {
         this.attackingVillage = new Village();
         this.defendingVillage = new Village();
     }
+    public void setDefendingVillage(int amountOfUnitsPerType) {
+
+        defendingVillage.addUnit(new Spear(), amountOfUnitsPerType);
+        defendingVillage.addUnit(new Axe(), amountOfUnitsPerType);
+        defendingVillage.addUnit(new Jarl(), amountOfUnitsPerType);
+        defendingVillage.addUnit(new Bow(), amountOfUnitsPerType);
+        defendingVillage.addUnit(new DefenceShip(), amountOfUnitsPerType);
+        defendingVillage.addUnit(new Shield(), amountOfUnitsPerType);
+
+    }
     public void setupAttackingVillage(int amountOfUnitsPerType) {
 
         attackingVillage.addUnit(new Spear(), amountOfUnitsPerType);
@@ -53,8 +63,6 @@ public class TestCombat {
         attackingVillage.addUnit(new Bow(), amountOfUnitsPerType);
         attackingVillage.addUnit(new DefenceShip(), amountOfUnitsPerType);
         attackingVillage.addUnit(new Shield(), amountOfUnitsPerType);
-        attackingVillage.addUnit(new TransportShip(), amountOfUnitsPerType);
-        attackingVillage.addUnit(new BattleShip(), amountOfUnitsPerType);
 
     }
 
@@ -69,8 +77,6 @@ public class TestCombat {
         attackedVillageUnits.add(new VillageUnit(new Bow(), 11));
         attackedVillageUnits.add(new VillageUnit(new DefenceShip(), 11));
         attackedVillageUnits.add(new VillageUnit(new Shield(), 11));
-        attackedVillageUnits.add(new VillageUnit(new TransportShip(), 11));
-        attackedVillageUnits.add(new VillageUnit(new BattleShip(), 11));
 
         List<VillageUnit> arr = new ArrayList<>(attackedVillageUnits);
 
@@ -106,6 +112,9 @@ public class TestCombat {
         assertThat(thrown.getMessage(), new StringContains("Not enough"));
     }
 
+    /**
+     * Village unit tests
+     */
     @Test
     public void test_convertToVillageUnits() {
 
@@ -144,4 +153,33 @@ public class TestCombat {
 
     }
 
+    /**
+     * Ship tests
+     */
+    @Test
+    public void test_hasEnoughShips() {
+        setDefendingVillage(10);
+
+        TransportShip transportship = new TransportShip();
+        transportship.setShipCapacity(100);
+        defendingVillage.addUnit(transportship, 1);
+
+        Set<VillageUnit> villageUnits = defendingVillage.getUnitsInVillage();
+        List<VillageUnit> arr = new ArrayList<>(villageUnits);
+
+        assertDoesNotThrow(() -> combatService.checkHasEnoughShipsToSendUnits(arr));
+    }
+
+    @Test
+    public void test_doesNotHaveEnoughShipsToSendUnits() {
+        setDefendingVillage(10);
+
+        TransportShip transportship = new TransportShip();
+        transportship.setShipCapacity(0);
+        defendingVillage.addUnit(transportship, 1);
+        Set<VillageUnit> villageUnits = defendingVillage.getUnitsInVillage();
+        List<VillageUnit> arr = new ArrayList<>(villageUnits);
+
+        assertDoesNotThrow(() -> combatService.checkHasEnoughShipsToSendUnits(arr));
+    }
 }
