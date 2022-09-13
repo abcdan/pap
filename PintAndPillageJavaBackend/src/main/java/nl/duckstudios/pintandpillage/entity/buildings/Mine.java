@@ -26,12 +26,13 @@ public class Mine extends ResourceBuilding {
         return 0;
     }
 
-    //    private int updateResourcesPerHour() {
-//        return (int)(20 + 12 * Math.pow(super.getLevel(), 1.2));
-//    }
-    private int updateResourcesPerHour() {
-        return 1000000;
+    // TODO: Changed: Same as wood production
+        private int updateResourcesPerHour() {
+        return (int)(20 + 12 * Math.pow(super.getLevel(), 1.2));
     }
+//    private int updateResourcesPerHour() {
+//        return 1000000;
+//    }
 
     @Override
     public void updateBuilding() {
