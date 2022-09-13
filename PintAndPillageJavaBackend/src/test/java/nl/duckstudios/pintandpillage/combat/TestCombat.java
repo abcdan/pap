@@ -1,5 +1,6 @@
 package nl.duckstudios.pintandpillage.combat;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import nl.duckstudios.pintandpillage.Exceptions.AttackingConditionsNotMetException;
 import nl.duckstudios.pintandpillage.entity.Village;
 import nl.duckstudios.pintandpillage.entity.VillageUnit;
@@ -18,10 +19,7 @@ import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
@@ -62,7 +60,6 @@ public class TestCombat {
     @Test
     public void hasEnoughUnitsToAttack() {
         setupAttackingVillage(100);
-
 
         Set<VillageUnit> attackedVillageUnits = new HashSet<>();
         attackedVillageUnits.add(new VillageUnit(new Spear(), 11));
@@ -113,11 +110,19 @@ public class TestCombat {
 
         List<AttackUnitData> attackUnitDataList = new ArrayList<>();
         attackUnitDataList.add(new AttackUnitData(UnitType.Spear, 10));
+        attackUnitDataList.add(new AttackUnitData(UnitType.Axe, 10));
+        attackUnitDataList.add(new AttackUnitData(UnitType.Bow, 10));
 
-        AttackVillageDataHelper data = new AttackVillageDataHelper(attackUnitDataList, 10, 10);
+//        AttackVillageData attackVillageDataHelper = new AttackVillageDataHelper(attackUnitDataList, 10, 10);
 
-        System.out.println(data.units);
-        List<VillageUnit> villageUnits = combatService.convertToVillageUnits(data);
+
+        AttackVillageData avd = new AttackVillageData();
+        avd.setToVillageId(1);
+        avd.setUnits(attackUnitDataList);
+        avd.setFromVillageId(2);
+
+
+        List<VillageUnit> villageUnits = combatService.convertToVillageUnits(avd);
 
         assertThat(villageUnits.get(0).getUnit().getUnitName().toString(), new StringContains("Spear"));
 

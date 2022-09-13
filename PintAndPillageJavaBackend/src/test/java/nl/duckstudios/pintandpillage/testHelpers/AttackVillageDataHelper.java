@@ -1,9 +1,12 @@
 package nl.duckstudios.pintandpillage.testHelpers;
 
+import lombok.Getter;
+import lombok.Setter;
 import nl.duckstudios.pintandpillage.model.AttackUnitData;
 import nl.duckstudios.pintandpillage.model.AttackVillageData;
 
 import java.util.List;
+
 
 public class AttackVillageDataHelper extends AttackVillageData {
 
