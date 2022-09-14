@@ -1,0 +1,24 @@
+{
+  "buildingId": 0,
+  "description": "Produces stone for your village",
+  "level": 1,
+  "producesResources": false,
+  "buildingLevelRequiredToLevelup": {},
+  "constructionTimeLeft": "00:00:00",
+  "constructionTime": "00:00:12",
+  "levelupFinishedTime": null,
+  "constructionTimeSeconds": 12,
+  "position": null,
+  "resourcesRequiredLevelUp": {
+    "Wood": 25
+  },
+  "populationRequiredNextLevel": 7,
+  "totalPopulationInUse": 0,
+  "points": 0,
+  "lastCollected": null,
+  "resourcesPerHour": 80,
+  "requiresResources": null,
+  "generatesResource": "Stone",
+  "name": "Mine",
+  "isUnderConstruction": true
+}
