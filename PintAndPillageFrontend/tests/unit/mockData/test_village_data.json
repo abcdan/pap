@@ -1,0 +1,850 @@
+{
+  "villageId": 18,
+  "name": "Kirkja",
+  "positionX": 10,
+  "positionY": 10,
+  "user": {
+    "id": 1,
+    "email": "test5@mail.com",
+    "username": "Derp",
+    "firstTimeLoggedIn": false
+  },
+  "morale": 100,
+  "newLogAvailable": false,
+  "villagePoints": 430,
+  "villagePointsCached": 0,
+  "population": 5824,
+  "populationInUse": 385,
+  "populationLeft": 5439,
+  "resourceLimit": 750,
+  "completedResearches": [],
+  "availableResearches": [
+    {
+      "researchName": "Spear",
+      "researchLevel": 0,
+      "baseSecondsToResearch": 10,
+      "secondsToResearch": "00:00:10",
+      "buildingLevelRequirement": 1,
+      "resourcesRequiredToResearch": {
+        "Wood": 0,
+        "Stone": 150,
+        "Beer": 150
+      }
+    },
+    {
+      "researchName": "Jarl",
+      "researchLevel": 0,
+      "baseSecondsToResearch": 5,
+      "secondsToResearch": "00:00:05",
+      "buildingLevelRequirement": 1,
+      "resourcesRequiredToResearch": {
+        "Wood": 10,
+        "Stone": 10,
+        "Beer": 10
+      }
+    },
+    {
+      "researchName": "DefenceShip",
+      "researchLevel": 0,
+      "baseSecondsToResearch": 18000,
+      "secondsToResearch": "05:00:00",
+      "buildingLevelRequirement": 12,
+      "resourcesRequiredToResearch": {
+        "Wood": 10000,
+        "Stone": 7000,
+        "Beer": 11000
+      }
+    },
+    {
+      "researchName": "BattleShip",
+      "researchLevel": 0,
+      "baseSecondsToResearch": 20000,
+      "secondsToResearch": "05:33:20",
+      "buildingLevelRequirement": 10,
+      "resourcesRequiredToResearch": {
+        "Wood": 8000,
+        "Stone": 8000,
+        "Beer": 8000
+      }
+    },
+    {
+      "researchName": "Bow",
+      "researchLevel": 0,
+      "baseSecondsToResearch": 13200,
+      "secondsToResearch": "03:40:00",
+      "buildingLevelRequirement": 8,
+      "resourcesRequiredToResearch": {
+        "Wood": 4100,
+        "Stone": 4100,
+        "Beer": 4100
+      }
+    },
+    {
+      "researchName": "Axe",
+      "researchLevel": 0,
+      "baseSecondsToResearch": 7200,
+      "secondsToResearch": "02:00:00",
+      "buildingLevelRequirement": 3,
+      "resourcesRequiredToResearch": {
+        "Wood": 1200,
+        "Stone": 1200,
+        "Beer": 1200
+      }
+    },
+    {
+      "researchName": "Shield",
+      "researchLevel": 0,
+      "baseSecondsToResearch": 11800,
+      "secondsToResearch": "03:16:40",
+      "buildingLevelRequirement": 5,
+      "resourcesRequiredToResearch": {
+        "Wood": 2200,
+        "Stone": 2200,
+        "Beer": 2200
+      }
+    }
+  ],
+  "unitsInVillage": [
+    {
+      "id": 31,
+      "unit": {
+        "unitName": "Spear",
+        "attack": 15,
+        "defence": 15,
+        "health": 20,
+        "speed": 10,
+        "description": "War hardened vikings wielding a spear",
+        "populationRequiredPerUnit": 1,
+        "baseSecondsToProduce": 10,
+        "plunderAmount": 0,
+        "resourcesRequiredToProduce": {
+          "Wood": 15,
+          "Beer": 15
+        },
+        "researchRequired": "Spear",
+        "baseTimeToProduce": "00:00:10"
+      },
+      "amount": 10
+    },
+    {
+      "id": 29,
+      "unit": {
+        "unitName": "TransportShip",
+        "attack": 0,
+        "defence": 0,
+        "health": 10,
+        "speed": 50,
+        "description": "A viking longship that can carry many raiders",
+        "populationRequiredPerUnit": 3,
+        "baseSecondsToProduce": 10,
+        "plunderAmount": 1000,
+        "resourcesRequiredToProduce": {
+          "Wood": 500,
+          "Stone": 200,
+          "Beer": 100
+        },
+        "researchRequired": "None",
+        "baseTimeToProduce": "00:00:10",
+        "shipCapacity": 50
+      },
+      "amount": 1
+    }
+  ],
+  "villageResources": {
+    "Wood": 10000,
+    "Hop": 5,
+    "Stone": 10000,
+    "Beer": 10000
+  },
+  "resourcesPerHour": {},
+  "buildings": [
+    {
+      "buildingId": 25,
+      "description": "The main building of the village",
+      "level": 1,
+      "producesResources": false,
+      "buildingLevelRequiredToLevelup": {},
+      "constructionTimeLeft": "00:00:00",
+      "constructionTime": "00:01:15",
+      "levelupFinishedTime": null,
+      "constructionTimeSeconds": 75,
+      "position": {
+        "x": 6,
+        "y": 6
+      },
+      "resourcesRequiredLevelUp": {
+        "Wood": 0,
+        "Stone": 625
+      },
+      "populationRequiredNextLevel": 13,
+      "totalPopulationInUse": 13,
+      "points": 10,
+      "name": "Headquarters",
+      "moralePerHour": 2,
+      "populationCapacity": 45,
+      "resourceCapacity": 750,
+      "lastTimeMoralUpped": "2022-09-09T14:20:14.561639",
+      "isUnderConstruction": false
+    }
+  ],
+  "validBuildPositions": [
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 2,
+        "y": 2
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 9,
+        "y": 4
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 3,
+        "y": 7
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 1,
+        "y": 4
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 6,
+        "y": 6
+      },
+      "allowedBuilding": "Headquarters"
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 2,
+        "y": 4
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 11,
+        "y": 2
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "allowedBuilding": "Wall"
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 5,
+        "y": 10
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 0,
+        "y": 10
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 12,
+        "y": 1
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 11,
+        "y": 10
+      },
+      "allowedBuilding": "Harbor"
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 9,
+        "y": 7
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 14,
+        "y": 7
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 9,
+        "y": 13
+      },
+      "allowedBuilding": "Harbor"
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 6,
+        "y": 2
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 3,
+        "y": 12
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 1,
+        "y": 11
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 1,
+        "y": 8
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 2,
+        "y": 10
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 8,
+        "y": 10
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 7,
+        "y": 13
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 12,
+        "y": 6
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 8,
+        "y": 6
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 4,
+        "y": 4
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 12,
+        "y": 4
+      },
+      "allowedBuilding": null
+    },
+    {
+      "name": "BuildingTile",
+      "position": {
+        "x": 4,
+        "y": 1
+      },
+      "allowedBuilding": null
+    }
+  ],
+  "buildingsThatCanBeBuild": [
+    {
+      "buildingId": 0,
+      "description": "A building used to train new units",
+      "level": 0,
+      "producesResources": false,
+      "buildingLevelRequiredToLevelup": {
+        "Headquarters": 5
+      },
+      "constructionTimeLeft": "00:00:00",
+      "constructionTime": "00:02:00",
+      "levelupFinishedTime": null,
+      "constructionTimeSeconds": 120,
+      "position": null,
+      "resourcesRequiredLevelUp": {
+        "Wood": 1000,
+        "Stone": 800
+      },
+      "populationRequiredNextLevel": 7,
+      "totalPopulationInUse": 0,
+      "points": 0,
+      "productionQueue": [],
+      "queueLimit": 5,
+      "lastCollected": "2022-09-09T14:25:08.981788",
+      "lastCollectedTimeLeft": 0.0,
+      "unitsUnlockedAtLevel": [
+        {
+          "unitType": "Spear",
+          "level": 1
+        },
+        {
+          "unitType": "Axe",
+          "level": 4
+        },
+        {
+          "unitType": "Shield",
+          "level": 8
+        },
+        {
+          "unitType": "Bow",
+          "level": 13
+        },
+        {
+          "unitType": "Jarl",
+          "level": 10
+        }
+      ],
+      "unlockedUnitsData": [
+        {
+          "unit": {
+            "unitName": "Spear",
+            "attack": 15,
+            "defence": 15,
+            "health": 20,
+            "speed": 10,
+            "description": "War hardened vikings wielding a spear",
+            "populationRequiredPerUnit": 1,
+            "baseSecondsToProduce": 10,
+            "plunderAmount": 0,
+            "resourcesRequiredToProduce": {
+              "Wood": 15,
+              "Beer": 15
+            },
+            "researchRequired": "Spear",
+            "baseTimeToProduce": "00:00:10"
+          },
+          "levelUnlocked": 1
+        },
+        {
+          "unit": {
+            "unitName": "Axe",
+            "attack": 15,
+            "defence": 15,
+            "health": 20,
+            "speed": 10,
+            "description": "War hardened vikings wielding a axe",
+            "populationRequiredPerUnit": 1,
+            "baseSecondsToProduce": 10,
+            "plunderAmount": 0,
+            "resourcesRequiredToProduce": {
+              "Wood": 15,
+              "Beer": 15
+            },
+            "researchRequired": "Axe",
+            "baseTimeToProduce": "00:00:10"
+          },
+          "levelUnlocked": 4
+        },
+        {
+          "unit": {
+            "unitName": "Shield",
+            "attack": 5,
+            "defence": 50,
+            "health": 40,
+            "speed": 5,
+            "description": "Great defensive unit that carries a large rounded shield and a small axe",
+            "populationRequiredPerUnit": 1,
+            "baseSecondsToProduce": 610,
+            "plunderAmount": 0,
+            "resourcesRequiredToProduce": {
+              "Wood": 20,
+              "Stone": 50,
+              "Beer": 50
+            },
+            "researchRequired": "Shield",
+            "baseTimeToProduce": "00:10:10"
+          },
+          "levelUnlocked": 8
+        },
+        {
+          "unit": {
+            "unitName": "Bow",
+            "attack": 15,
+            "defence": 15,
+            "health": 20,
+            "speed": 10,
+            "description": "War hardened vikings wielding a axe",
+            "populationRequiredPerUnit": 1,
+            "baseSecondsToProduce": 10,
+            "plunderAmount": 0,
+            "resourcesRequiredToProduce": {
+              "Wood": 15,
+              "Beer": 15
+            },
+            "researchRequired": "Bow",
+            "baseTimeToProduce": "00:00:10"
+          },
+          "levelUnlocked": 13
+        },
+        {
+          "unit": {
+            "unitName": "Jarl",
+            "attack": 15,
+            "defence": 15,
+            "health": 20,
+            "speed": 10,
+            "description": "A branded leader ready to create new settlements",
+            "populationRequiredPerUnit": 1,
+            "baseSecondsToProduce": 5,
+            "plunderAmount": 0,
+            "resourcesRequiredToProduce": {
+              "Wood": 15,
+              "Beer": 15
+            },
+            "researchRequired": "Jarl",
+            "baseTimeToProduce": "00:00:05"
+          },
+          "levelUnlocked": 10
+        }
+      ],
+      "populationInProduction": 0,
+      "productionSpeed": 1.0,
+      "_hasNotCollected": false,
+      "name": "Barracks",
+      "isUnderConstruction": true
+    },
+    {
+      "buildingId": 0,
+      "description": "A building that increases your village population",
+      "level": 0,
+      "producesResources": false,
+      "buildingLevelRequiredToLevelup": {},
+      "constructionTimeLeft": "00:00:00",
+      "constructionTime": "00:00:12",
+      "levelupFinishedTime": null,
+      "constructionTimeSeconds": 12,
+      "position": null,
+      "resourcesRequiredLevelUp": {
+        "Wood": 10,
+        "Stone": 8
+      },
+      "populationRequiredNextLevel": 0,
+      "totalPopulationInUse": 0,
+      "points": 0,
+      "name": "House",
+      "populationCapacity": 0,
+      "isUnderConstruction": true
+    },
+    {
+      "buildingId": 0,
+      "description": "Produces stone for your village",
+      "level": 0,
+      "producesResources": false,
+      "buildingLevelRequiredToLevelup": {},
+      "constructionTimeLeft": "00:00:00",
+      "constructionTime": "00:00:12",
+      "levelupFinishedTime": null,
+      "constructionTimeSeconds": 12,
+      "position": null,
+      "resourcesRequiredLevelUp": {
+        "Wood": 25
+      },
+      "populationRequiredNextLevel": 7,
+      "totalPopulationInUse": 0,
+      "points": 0,
+      "lastCollected": null,
+      "resourcesPerHour": 1000000,
+      "requiresResources": null,
+      "generatesResource": "Stone",
+      "name": "Mine",
+      "isUnderConstruction": true
+    },
+    {
+      "buildingId": 0,
+      "description": "Produces hop for your village",
+      "level": 0,
+      "producesResources": false,
+      "buildingLevelRequiredToLevelup": {},
+      "constructionTimeLeft": "00:00:00",
+      "constructionTime": "00:00:12",
+      "levelupFinishedTime": null,
+      "constructionTimeSeconds": 12,
+      "position": null,
+      "resourcesRequiredLevelUp": {
+        "Stone": 25
+      },
+      "populationRequiredNextLevel": 7,
+      "totalPopulationInUse": 0,
+      "points": 0,
+      "lastCollected": null,
+      "resourcesPerHour": 20,
+      "requiresResources": null,
+      "generatesResource": "Hop",
+      "name": "Farm",
+      "isUnderConstruction": true
+    },
+    {
+      "buildingId": 0,
+      "description": "Produces wood for your village",
+      "level": 0,
+      "producesResources": false,
+      "buildingLevelRequiredToLevelup": {},
+      "constructionTimeLeft": "00:00:00",
+      "constructionTime": "00:00:12",
+      "levelupFinishedTime": null,
+      "constructionTimeSeconds": 12,
+      "position": null,
+      "resourcesRequiredLevelUp": {
+        "Stone": 25
+      },
+      "populationRequiredNextLevel": 7,
+      "totalPopulationInUse": 0,
+      "points": 0,
+      "lastCollected": null,
+      "resourcesPerHour": 1000000,
+      "requiresResources": null,
+      "generatesResource": "Wood",
+      "name": "Lumberyard",
+      "isUnderConstruction": true
+    },
+    {
+      "buildingId": 0,
+      "description": "Produces beer for your village at the cost of hop",
+      "level": 0,
+      "producesResources": false,
+      "buildingLevelRequiredToLevelup": {},
+      "constructionTimeLeft": "00:00:00",
+      "constructionTime": "00:00:12",
+      "levelupFinishedTime": null,
+      "constructionTimeSeconds": 12,
+      "position": null,
+      "resourcesRequiredLevelUp": {
+        "Stone": 25
+      },
+      "populationRequiredNextLevel": 7,
+      "totalPopulationInUse": 0,
+      "points": 0,
+      "lastCollected": null,
+      "resourcesPerHour": 300,
+      "requiresResources": "Hop",
+      "generatesResource": "Beer",
+      "name": "Tavern",
+      "isUnderConstruction": true
+    },
+    {
+      "buildingId": 0,
+      "description": "The wall increases your village defence",
+      "level": 0,
+      "producesResources": false,
+      "buildingLevelRequiredToLevelup": {},
+      "constructionTimeLeft": "00:00:00",
+      "constructionTime": "00:00:12",
+      "levelupFinishedTime": null,
+      "constructionTimeSeconds": 12,
+      "position": null,
+      "resourcesRequiredLevelUp": {
+        "Wood": 301,
+        "Stone": 301,
+        "Beer": 101
+      },
+      "populationRequiredNextLevel": 53,
+      "totalPopulationInUse": 0,
+      "points": 0,
+      "name": "Wall",
+      "defenceBonus": 51,
+      "isUnderConstruction": true
+    },
+    {
+      "buildingId": 0,
+      "description": "A tower that will increase your village defence and help detect enemy scouts",
+      "level": 0,
+      "producesResources": false,
+      "buildingLevelRequiredToLevelup": {},
+      "constructionTimeLeft": "00:00:00",
+      "constructionTime": "00:00:12",
+      "levelupFinishedTime": null,
+      "constructionTimeSeconds": 12,
+      "position": null,
+      "resourcesRequiredLevelUp": {
+        "Wood": 301,
+        "Stone": 301,
+        "Beer": 101
+      },
+      "populationRequiredNextLevel": 50,
+      "totalPopulationInUse": 0,
+      "points": 0,
+      "name": "DefenceTower",
+      "defenceBonus": 100,
+      "isUnderConstruction": true
+    },
+    {
+      "buildingId": 0,
+      "description": "A building used to build new ships",
+      "level": 0,
+      "producesResources": false,
+      "buildingLevelRequiredToLevelup": {
+        "Headquarters": 10,
+        "Smith": 8,
+        "Lumberyard": 10
+      },
+      "constructionTimeLeft": "00:00:00",
+      "constructionTime": "00:00:05",
+      "levelupFinishedTime": null,
+      "constructionTimeSeconds": 5,
+      "position": null,
+      "resourcesRequiredLevelUp": {
+        "Wood": 200,
+        "Stone": 400,
+        "Beer": 250
+      },
+      "populationRequiredNextLevel": 7,
+      "totalPopulationInUse": 0,
+      "points": 0,
+      "productionQueue": [],
+      "queueLimit": 2,
+      "lastCollected": "2022-09-09T14:25:08.981855",
+      "lastCollectedTimeLeft": 0.0,
+      "unitsUnlockedAtLevel": [
+        {
+          "unitType": "TransportShip",
+          "level": 1
+        }
+      ],
+      "unlockedUnitsData": [
+        {
+          "unit": {
+            "unitName": "TransportShip",
+            "attack": 0,
+            "defence": 0,
+            "health": 10,
+            "speed": 50,
+            "description": "A viking longship that can carry many raiders",
+            "populationRequiredPerUnit": 3,
+            "baseSecondsToProduce": 10,
+            "plunderAmount": 1000,
+            "resourcesRequiredToProduce": {
+              "Wood": 500,
+              "Stone": 200,
+              "Beer": 100
+            },
+            "researchRequired": "None",
+            "baseTimeToProduce": "00:00:10",
+            "shipCapacity": 50
+          },
+          "levelUnlocked": 1
+        }
+      ],
+      "populationInProduction": 0,
+      "productionSpeed": 1.0,
+      "_hasNotCollected": false,
+      "name": "Harbor",
+      "isUnderConstruction": true
+    },
+    {
+      "buildingId": 0,
+      "description": "A building to research new units and ships",
+      "level": 0,
+      "producesResources": false,
+      "buildingLevelRequiredToLevelup": {},
+      "constructionTimeLeft": "00:00:00",
+      "constructionTime": "00:00:05",
+      "levelupFinishedTime": null,
+      "constructionTimeSeconds": 5,
+      "position": null,
+      "resourcesRequiredLevelUp": {
+        "Wood": 1000,
+        "Stone": 150
+      },
+      "populationRequiredNextLevel": 7,
+      "totalPopulationInUse": 0,
+      "points": 0,
+      "currentResearch": null,
+      "currentResearchFinishTime": null,
+      "researchTimeLeft": null,
+      "name": "Smith",
+      "isUnderConstruction": true,
+      "isResearchInProgress": false
+    },
+    {
+      "buildingId": 0,
+      "description": "A building that increases your storage capacity",
+      "level": 0,
+      "producesResources": false,
+      "buildingLevelRequiredToLevelup": {},
+      "constructionTimeLeft": "00:00:00",
+      "constructionTime": "00:00:06",
+      "levelupFinishedTime": null,
+      "constructionTimeSeconds": 6,
+      "position": null,
+      "resourcesRequiredLevelUp": {
+        "Stone": 625
+      },
+      "populationRequiredNextLevel": 7,
+      "totalPopulationInUse": 0,
+      "points": 0,
+      "name": "Storage",
+      "resourceCapacity": 601,
+      "isUnderConstruction": true
+    }
+  ],
+  "incomingAttacks": [],
+  "outgoingAttacks": [],
+  "returningCombatTravels": [],
+  "totalDefence": 0,
+  "villageLog": [],
+  "combatLog": [],
+  "pillageableResources": {
+    "Wood": 5000,
+    "Hop": 2,
+    "Stone": 5000,
+    "Beer": 5000
+  }
+}
