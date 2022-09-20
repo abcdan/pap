@@ -11,7 +11,7 @@
                         <population-frame :checkAvailability='checkAvailability' :populationLeft="currentBuilding.populationRequiredNextLevel"></population-frame>
                     </div>
                     <resource-item :checkAvailability='checkAvailability' :resources="currentBuilding.resourcesRequiredLevelUp" :displayTooltip="false"></resource-item>
-                    <button :disabled="!canBeLeveledUp()" @click="updateBuilding">Level Up</button>
+                    <button id="level-up-button" :disabled="!canBeLeveledUp()" @click="updateBuilding">Level Up</button>
                 </div>
             </div>
             <div v-else class="underConstruction">
