@@ -1,11 +1,9 @@
-import {createLocalVue, ErrorWrapper, shallowMount} from "@vue/test-utils";
+import {createLocalVue, shallowMount} from "@vue/test-utils";
 import Vuex from "vuex";
 import LevelUpBuilding from "@/components/ui/LevelUpBuilding";
 import TimeFrame from "@/components/ui/TimeFrame";
 import ResourceItem from "@/components/ui/ResourceItem";
 import PopulationFrame from "@/components/ui/PopulationFrame";
-import BUILDING from "../mockData/test_building_data_not_under_construction.json";
-import VILLAGE from "../mockData/test_village_data.json";
 
 let levelUpBuildingWrapper;
 let store;
