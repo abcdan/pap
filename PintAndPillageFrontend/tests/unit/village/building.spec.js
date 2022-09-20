@@ -59,6 +59,16 @@ afterAll(() =>{
 
 describe('Building', () => {
     it('should show visual change on level 10', async () => {
+        setup(10)
+
+        const nilsepils = buildingWrapper.findAll(".tileImg").at(0).html()
+        console.log(nilsepils)
+        //   <img src="" class="tileImg">
+        // TODO: Vincent ff vragen
+        expect(false).toBeTruthy();
+    })
+
+    it('should show normal tile below 10', async () => {
         setup(1)
 
         const nilsepils = buildingWrapper.findAll(".tileImg").at(0).html()
