@@ -63,7 +63,9 @@ describe('Building', () => {
 
         const nilsepils = buildingWrapper.findAll(".tileImg").at(0).html()
         console.log(nilsepils)
-
+        //   <img src="" class="tileImg">
+        // TODO: Vincent ff vragen
+        expect(false).toBeTruthy();
     })
 
 });
