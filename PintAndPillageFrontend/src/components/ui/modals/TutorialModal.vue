@@ -2,7 +2,7 @@
     <div class="tutorialBaseModal" @click="close" >
         <div class="tutorialModalBackdrop" @click.stop>
            <div class="tutorialTextDiv">
-               <h1>Elwrick Pintbreaker</h1>
+               <h1 id="elwrick-pintbreaker">Elwrick Pintbreaker</h1>
                <hr align="left" width="40%"/>
                <h2 v-if="firstPage">Hi there my fellow Viking! My name is Elwrick Pintbreaker and I'm having a wee bit of a problem...
                You see, me and some of my Viking lads and lasses got banished from our clan, for say 'being too lazy, only drinking beer and wanting to pillage all the time"'

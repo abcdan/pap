@@ -1,6 +1,6 @@
-import {createLocalVue, shallowMount} from "@vue/test-utils";
+import {createLocalVue, ErrorWrapper, shallowMount} from "@vue/test-utils";
 import Vuex from "vuex";
-import LevelUpBuilding from "../../src/components/ui/LevelUpBuilding";
+import LevelUpBuilding from "@/components/ui/LevelUpBuilding";
 import TimeFrame from "@/components/ui/TimeFrame";
 import ResourceItem from "@/components/ui/ResourceItem";
 import PopulationFrame from "@/components/ui/PopulationFrame";
@@ -17,7 +17,7 @@ localVue.use(Vuex)
 
 const state = {
     village: {
-        data: require("./mockData/test_village_data.json")
+        data: require("../mockData/test_village_data.json")
     }
 }
 
@@ -29,7 +29,7 @@ describe('LevelUpBuilding', () => {
     it('is under construction', function () {
         getters = {
             building: () => () => {
-                return require("./mockData/test_building_data.json")
+                return require("../mockData/test_building_data.json")
             }
         }
 
@@ -51,7 +51,7 @@ describe('LevelUpBuilding', () => {
 
         getters = {
             building: () => () => {
-                return require("./mockData/test_building_data_not_under_construction.json")
+                return require("../mockData/test_building_data_not_under_construction.json")
             }
         }
 
@@ -68,8 +68,8 @@ describe('LevelUpBuilding', () => {
 
         const message = levelUpBuildingWrapper.find('#building-is-under-construction')
 
-        console.log(message)
-        // expect(message).toBe("Building is under construction")
+        // console.log(message)
+        expect(message).toBeInstanceOf(ErrorWrapper)
     });
 
 });
