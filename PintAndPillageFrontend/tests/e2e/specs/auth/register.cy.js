@@ -17,7 +17,7 @@ describe('Alle mooie tests op een stokje', () => {
     }
 
 
-    it('Register from homepage', () => {
+    it('should register an account', () => {
         setup();
         cy.visit("/")
         cy.get("#login-button").click()
@@ -33,7 +33,7 @@ describe('Alle mooie tests op een stokje', () => {
 
     })
 
-    it('Test login', () => {
+    it('should login with registered account', () => {
         cy.visit("login")
         cy.get("#username").type(email)
 
