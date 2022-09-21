@@ -3,13 +3,13 @@
         <div class="registerBox">
             <transition name="fade" mode="out-in">
                 <div key=1 class="registerInputBox">
-                    <input class="inputField" type="text" v-model.trim="username" placeholder="Username"/>
-                    <input class="inputField" type="email" v-model.trim="email" placeholder="Email"/>
-                    <input class="inputField" type="password" v-model.trim="password" placeholder="Password"/>
-                    <input class="inputField" type="password" v-model.trim="repeatPassword" placeholder="Repeat password"/>
+                    <input class="inputField" type="text" id="username" v-model.trim="username" placeholder="Username"/>
+                    <input class="inputField" type="email" id="email" v-model.trim="email" placeholder="Email"/>
+                    <input class="inputField" type="password" id="password" v-model.trim="password" placeholder="Password"/>
+                    <input class="inputField" type="password" id="repeatPassword" v-model.trim="repeatPassword" placeholder="Repeat password"/>
                     <a class="redirects" @click="updateRoute('Login')">Login</a>
                     <a class="redirects" @click="updateRoute('ResetPassword')">Reset password</a>
-                    <button class="submitButton" @click="register">Register</button>
+                    <button class="submitButton" id="submitButton" @click="register">Register</button>
                 </div>
                 <!--                <div key=2 class="registerInputBox" v-else>-->
                 <!--                    <p>Please check your email for the confirmation link</p>-->

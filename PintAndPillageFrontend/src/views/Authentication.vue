@@ -6,7 +6,7 @@
               Home
               <hr v-if="isCurrentTab('HomePage')" width="80%">
           </a>
-          <a @click="redirect('Login')" style="border-left: 10px solid transparent">
+          <a @click="redirect('Login')" id="login-button" style="border-left: 10px solid transparent">
               Login / Register
               <hr v-if="isCurrentTab('Login')" width="80%">
           </a>
