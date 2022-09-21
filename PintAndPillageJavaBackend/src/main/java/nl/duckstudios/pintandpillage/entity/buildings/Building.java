@@ -107,7 +107,11 @@ public abstract class Building {
     }
 
     public void setConstructionTimeSeconds(long seconds) {
-        this.constructionTimeSeconds = seconds;
+        if (System.getenv("GODMODE") != null) {
+            this.constructionTimeSeconds = 0;
+        } else {
+            this.constructionTimeSeconds = seconds;
+        }
         this.setConstructionTime();
     }
 
