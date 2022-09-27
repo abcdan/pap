@@ -9,6 +9,8 @@ import nl.duckstudios.pintandpillage.entity.buildings.*;
 import nl.duckstudios.pintandpillage.entity.logs.CombatLog;
 import nl.duckstudios.pintandpillage.entity.logs.LogLine;
 import nl.duckstudios.pintandpillage.entity.logs.VillageLog;
+import nl.duckstudios.pintandpillage.entity.production.Spear;
+import nl.duckstudios.pintandpillage.entity.production.TransportShip;
 import nl.duckstudios.pintandpillage.entity.production.Unit;
 import nl.duckstudios.pintandpillage.entity.researching.*;
 import nl.duckstudios.pintandpillage.entity.travels.AttackCombatTravel;
@@ -109,11 +111,21 @@ public class Village {
     @ElementCollection
     private Map<String, Integer> villageResources = new HashMap<>() {
         {
-            put(ResourceType.Stone.name(), 500);
-            put(ResourceType.Wood.name(), 500);
-            put(ResourceType.Beer.name(), 500);
-            put(ResourceType.Hop.name(), 0); // TODO: Changed: Added hop as default value
-            put(ResourceType.Beer.name(), 0); // TODO: Changed: Added hop as default value
+            if (System.getenv("GODMODE") != null) {
+                put(ResourceType.Stone.name(), 500000);
+                put(ResourceType.Wood.name(), 500000);
+                put(ResourceType.Beer.name(), 500000);
+                put(ResourceType.Hop.name(), 500000); // TODO: Changed: Added hop as default value
+                put(ResourceType.Beer.name(), 500000);// TODO: Changed: Added hop as default value
+
+            } else {
+
+                put(ResourceType.Stone.name(), 500);
+                put(ResourceType.Wood.name(), 500);
+                put(ResourceType.Beer.name(), 500);
+                put(ResourceType.Hop.name(), 0); // TODO: Changed: Added hop as default value
+                put(ResourceType.Beer.name(), 0); // TODO: Changed: Added hop as default value
+            }
         }
     };
 
@@ -181,6 +193,17 @@ public class Village {
         this.createBuildableBuildingsList();
         this.updateVillageState();
         this.unitsInVillage = new HashSet<>();
+
+
+        // TODO: Changed godmode
+//        if (System.getenv("GODMODE") != null) {
+//            Spear spearUnit = new Spear();
+//            TransportShip transportShip = new TransportShip();
+//
+//            this.unitsInVillage.add(new VillageUnit(spearUnit, 25));
+//            this.unitsInVillage.add(new VillageUnit(transportShip, 1));
+//        }
+
         this.setAvailableResearches();
     }
 

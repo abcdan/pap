@@ -111,6 +111,7 @@ public abstract class Building {
 
         if (System.getenv("GODMODE") != null) {
             this.constructionTimeSeconds = 0;
+            this.isUnderConstruction = false;
         } else {
             this.constructionTimeSeconds = seconds;
         }
@@ -128,12 +129,7 @@ public abstract class Building {
 
         this.levelupFinishedTime = LocalDateTime.now().plusSeconds(this.constructionTimeSeconds);
 
-        // TODO: Changed!
-        if (System.getenv("GODMODE") != null) {
-            this.isUnderConstruction = false;
-        } else {
-            this.isUnderConstruction = true;
-        }
+        this.isUnderConstruction = true;
         this.setConstructionTime();
         this.resourceManager.subtractResources(this.village, this.resourcesRequiredLevelUp);
     }

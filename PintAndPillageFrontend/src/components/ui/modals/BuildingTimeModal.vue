@@ -24,6 +24,8 @@
                 }
                 
                 let buildings = this.$store.getters.buildingList.filter(b => b.isUnderConstruction === true);
+
+                console.log(buildings)
                  
                 return buildings.sort((a, b) => {
                     return moment.duration(a.constructionTimeLeft).asSeconds() - moment.duration(b.constructionTimeLeft).asSeconds()
