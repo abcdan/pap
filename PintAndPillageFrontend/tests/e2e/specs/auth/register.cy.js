@@ -33,7 +33,7 @@ describe('Alle mooie tests op een stokje', () => {
 
     })
 
-    it('should login with registered account', () => {
+    it('first login should show tutorial', () => {
         cy.visit("login")
         cy.get("#username").type(email)
 
@@ -42,7 +42,26 @@ describe('Alle mooie tests op een stokje', () => {
 
         cy.location("pathname").should("eq", "/")
 
+
+        cy.get('.tutorialBaseModal').find('h2')
     })
+
+
+    it('second login should not show tutorial', () => {
+        cy.visit("login")
+        cy.get("#username").type(email)
+
+        cy.get("#password").type(password)
+        cy.get("#submitButton").click()
+
+        cy.location("pathname").should("eq", "/")
+
+
+        cy.contains(".tutorialBaseModal").should('not.exist');
+
+    })
+
+
 
     it('should build a house', () => {
         cy.visit("login")
