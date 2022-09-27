@@ -4,7 +4,7 @@ import {genRand} from "../helpers/random";
 
 
 
-describe('Alle mooie tests op een stokje', () => {
+describe('Village tests', () => {
 
     let username;
     let password;
@@ -30,7 +30,7 @@ describe('Alle mooie tests op een stokje', () => {
     })
 
 
-    it('should register an account', () => {
+    it('Setting up village tests', () => {
         setup();
         cy.visit("/")
         cy.get("#login-button").click()
@@ -44,9 +44,7 @@ describe('Alle mooie tests op een stokje', () => {
 
         cy.location("pathname").should("eq", "/login")
 
-    })
-
-    it('first login should show tutorial', () => {
+        //
         cy.visit("login")
         cy.get("#username").type(email)
 
@@ -54,23 +52,6 @@ describe('Alle mooie tests op een stokje', () => {
         cy.get("#submitButton").click()
 
         cy.location("pathname").should("eq", "/")
-
-
-        cy.get('.tutorialBaseModal').find('h2')
-    })
-
-
-    it('second login should not show tutorial', () => {
-        cy.visit("login")
-        cy.get("#username").type(email)
-
-        cy.get("#password").type(password)
-        cy.get("#submitButton").click()
-
-        cy.location("pathname").should("eq", "/")
-
-
-        cy.contains(".tutorialBaseModal").should('not.exist');
 
     })
 

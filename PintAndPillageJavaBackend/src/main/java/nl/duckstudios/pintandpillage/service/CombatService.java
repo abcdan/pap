@@ -54,8 +54,9 @@ public class CombatService {
                 .mapToInt(s -> s.getAmount() * ((ShipUnit) s.getUnit())
                         .getShipCapacity()).sum();
 
+        // TODO: Changed: Uitroeptkeen toegevoegd
         int totalUnitCapacity = villageUnits.stream()
-                .filter(u -> !(u.getUnit() instanceof Scout) && (u.getUnit() instanceof ShipUnit))
+                .filter(u -> !(u.getUnit() instanceof Scout) && !(u.getUnit() instanceof ShipUnit))
                 .mapToInt(u -> u.getUnit().getPopulationRequiredPerUnit() * u.getAmount()).sum();
 
         if (totalShipCapacity < totalUnitCapacity) {

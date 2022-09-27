@@ -4,7 +4,7 @@ import {genRand} from "../helpers/random";
 
 
 
-describe('Alle mooie tests op een stokje', () => {
+describe('Attack related tests', () => {
 
     let username;
     let password;
