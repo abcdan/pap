@@ -30,6 +30,51 @@ describe('Alle mooie tests op een stokje', () => {
     })
 
 
+    it('should not work with short password', () => {
+        setup();
+        cy.visit("/")
+        cy.get("#login-button").click()
+        cy.get("#register-button").click()
+        cy.get("#username").type(username)
+        cy.get("#email").type(email)
+
+        cy.get("#password").type("1234")
+        cy.get("#repeatPassword").type("1234")
+        cy.get("#submitButton").click()
+
+        cy.get(".v-toast-error").should('exist')
+    })
+
+    it('should not matching passwords throw error', () => {
+        setup();
+        cy.visit("/")
+        cy.get("#login-button").click()
+        cy.get("#register-button").click()
+        cy.get("#username").type(username)
+        cy.get("#email").type(email)
+
+        cy.get("#password").type("12342222@@@")
+        cy.get("#repeatPassword").type("1234")
+        cy.get("#submitButton").click()
+
+        cy.get(".v-toast-error").should('exist')
+    })
+
+    it('should password not strong enough throw error', () => {
+        setup();
+        cy.visit("/")
+        cy.get("#login-button").click()
+        cy.get("#register-button").click()
+        cy.get("#username").type(username)
+        cy.get("#email").type(email)
+
+        cy.get("#password").type("qwert123!")
+        cy.get("#repeatPassword").type("qwert123!")
+        cy.get("#submitButton").click()
+
+        cy.get(".v-toast-error").should('exist')
+    })
+
     it('should register an account', () => {
         setup();
         cy.visit("/")
