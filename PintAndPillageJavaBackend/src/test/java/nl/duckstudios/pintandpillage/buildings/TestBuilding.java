@@ -4,7 +4,7 @@ import nl.duckstudios.pintandpillage.Exceptions.BuildingConditionsNotMetExceptio
 import nl.duckstudios.pintandpillage.entity.Coord;
 import nl.duckstudios.pintandpillage.entity.buildings.House;
 import nl.duckstudios.pintandpillage.helper.ResourceManager;
-import nl.duckstudios.pintandpillage.testHelpers.ResourceHelper;
+import nl.duckstudios.pintandpillage.village.testHelpers.ResourceHelper;
 import nl.duckstudios.pintandpillage.entity.Village;
 import nl.duckstudios.pintandpillage.model.ResourceType;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +17,6 @@ import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
-import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;

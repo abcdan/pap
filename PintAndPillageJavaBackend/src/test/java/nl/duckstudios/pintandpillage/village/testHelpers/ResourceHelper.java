@@ -1,4 +1,4 @@
-package nl.duckstudios.pintandpillage.testHelpers;
+package nl.duckstudios.pintandpillage.village.testHelpers;
 
 import nl.duckstudios.pintandpillage.model.ResourceType;
 import java.util.HashMap;

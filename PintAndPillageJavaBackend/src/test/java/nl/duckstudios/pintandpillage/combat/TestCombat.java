@@ -1,6 +1,5 @@
 package nl.duckstudios.pintandpillage.combat;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import nl.duckstudios.pintandpillage.Exceptions.AttackingConditionsNotMetException;
 import nl.duckstudios.pintandpillage.entity.Village;
 import nl.duckstudios.pintandpillage.entity.VillageUnit;
@@ -9,7 +8,6 @@ import nl.duckstudios.pintandpillage.model.AttackUnitData;
 import nl.duckstudios.pintandpillage.model.AttackVillageData;
 import nl.duckstudios.pintandpillage.model.UnitType;
 import nl.duckstudios.pintandpillage.service.CombatService;
-import nl.duckstudios.pintandpillage.testHelpers.AttackVillageDataHelper;
 import org.hamcrest.core.StringContains;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;

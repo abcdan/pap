@@ -1,4 +1,4 @@
-package nl.duckstudios.pintandpillage.testHelpers;
+package nl.duckstudios.pintandpillage.village.testHelpers;
 
 import lombok.Getter;
 import lombok.Setter;

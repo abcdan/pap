@@ -2,8 +2,6 @@ package nl.duckstudios.pintandpillage.buildings;
 
 import nl.duckstudios.pintandpillage.entity.Village;
 import nl.duckstudios.pintandpillage.entity.buildings.Farm;
-import nl.duckstudios.pintandpillage.entity.buildings.Farms;
-import nl.duckstudios.pintandpillage.testHelpers.ResourceHelper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;

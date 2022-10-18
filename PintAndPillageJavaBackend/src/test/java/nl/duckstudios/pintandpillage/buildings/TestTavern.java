@@ -1,9 +1,7 @@
 package nl.duckstudios.pintandpillage.buildings;
 
 import nl.duckstudios.pintandpillage.entity.Village;
-import nl.duckstudios.pintandpillage.entity.buildings.Mine;
 import nl.duckstudios.pintandpillage.entity.buildings.Tavern;
-import nl.duckstudios.pintandpillage.testHelpers.ResourceHelper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -12,9 +10,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
