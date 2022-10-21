@@ -45,7 +45,7 @@ public class TestTavern {
     }
 
     @Test
-    public void turnHopIntoBeer() {
+    public void should_convertHopIntoBeer_withTavern() {
 
         Map<String, Integer> resources = new HashMap<>();
         resources.put("Hop", 100);
@@ -69,7 +69,7 @@ public class TestTavern {
 
 
     @Test
-    public void notEnoughHop() {
+    public void should_notConvertHopIntoBeer_withoutEnoughHop() {
 
         Map<String, Integer> resources = new HashMap<>();
         resources.put("Hop", 0);

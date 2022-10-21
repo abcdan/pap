@@ -65,7 +65,7 @@ public class TestCombat {
     }
 
     @Test
-    public void hasEnoughUnitsToAttack() {
+    public void should_beAbleToAttack_whenEnoughResources() {
         setupAttackingVillage(100);
 
         Set<VillageUnit> attackedVillageUnits = new HashSet<>();
@@ -82,9 +82,8 @@ public class TestCombat {
 
     }
 
-    // TODO: Naming convention
     @Test
-    public void test_attackVillageWithNoUnitsWithoutHavingAnyUnits() {
+    public void should_notBeAbleToAttack_withoutAnyUnits() {
         setupAttackingVillage(0);
 
         List<VillageUnit> emptyUnitList = new ArrayList<>();
@@ -92,9 +91,8 @@ public class TestCombat {
         assertDoesNotThrow(() -> combatService.checkHasEnoughUnitsToAttack(emptyUnitList, attackingVillage));
     }
 
-    // TODO: Naming convention
     @Test
-    public void throwErrorBecauseNotEnoughUnits() {
+    public void should_notBeAbleToAttack_withoutEnoughResources() {
         setupAttackingVillage(10);
 
         Set<VillageUnit> attackedVillageUnits = new HashSet<>();
@@ -114,7 +112,7 @@ public class TestCombat {
      * Village unit tests
      */
     @Test
-    public void test_convertToVillageUnits() {
+    public void should_convertUnitsToAttackData_whenEnoughUnits() {
 
         List<AttackUnitData> attackUnitDataList = new ArrayList<>();
         attackUnitDataList.add(new AttackUnitData(UnitType.Spear, 10));
@@ -134,7 +132,7 @@ public class TestCombat {
     }
 
     @Test
-    public void test_concertNotEnoughUnits() {
+    public void should_notConvertUnitsToAttackData_withoutEnoughUnits() {
 
         List<AttackUnitData> attackUnitDataList = new ArrayList<>();
 
@@ -155,7 +153,7 @@ public class TestCombat {
      * Ship tests
      */
     @Test
-    public void test_hasEnoughShips() {
+    public void should_beAbleToSendShip_whenEnoughCapacity() {
         setDefendingVillage(10);
 
         TransportShip transportship = new TransportShip();
@@ -169,7 +167,7 @@ public class TestCombat {
     }
 
     @Test
-    public void test_doesNotHaveEnoughShipsToSendUnits() {
+    public void should_notBeAbleToSendShip_withoutEnoughCapacity() {
         setDefendingVillage(10);
 
         TransportShip transportship = new TransportShip();

@@ -25,7 +25,7 @@ public class TestStorage {
     }
 
     @Test
-    public void test_BuildStorage() {
+    public void should_minimumResourceLimit_whenInitialized() {
         Storage storage = new Storage();
         storage.setResourceCapacity(0);
         storage.setConstructionTimeSeconds(0);
@@ -41,7 +41,7 @@ public class TestStorage {
 
 
     @Test
-    public void test_BuildStorage_WithLevel() {
+    public void should_increaseResourceLimit_whenLeveledUp() {
         Storage storage = new Storage();
         storage.setResourceCapacity(0);
         storage.setConstructionTimeSeconds(0);

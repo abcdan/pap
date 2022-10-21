@@ -46,7 +46,7 @@ public class TestLumberyard {
     }
 
     @Test
-    public void increasedWoodProductionWhenBuildingLumberyard() {
+    public void shouldIncreaseWoodProduction_when_BuildingLumberyard() {
         villageMock.createBuilding(createLumberyard(1));
 
         Map<String, Integer> resourcesPerHour = villageMock.getResourcesPerHour();
@@ -58,7 +58,7 @@ public class TestLumberyard {
     }
 
     @Test
-    public void increasedWoodProductionWithMultipleLumberyards() {
+    public void should_IncreaseWoodProduction_with_multipleLumberyard() {
         villageMock.createBuilding(createLumberyard(1));
         villageMock.createBuilding(createLumberyard(1));
         villageMock.createBuilding(createLumberyard(1));
@@ -72,7 +72,7 @@ public class TestLumberyard {
     }
 
     @Test
-    public void collectAfterHourToSeeProduction() {
+    public void should_increaseVillageResources_after_anHourOfProduction() {
 
         LocalDateTime oneHourBack = LocalDateTime.now().minusHours(1);
         this.testingLumberyard.setLastCollected(oneHourBack);
@@ -86,7 +86,7 @@ public class TestLumberyard {
 
     }
     @Test
-    public void noIncreasingWoodWithoutLumberyards() {
+    public void should_notIncreaseWoodResources_without_lumberyards() {
         villageMock.updateVillageState();
         int ACTUAL_WOOD_PRODUCTION = villageMock.getVillageResources().get("Wood");
         int EXPECTED_WOOD_PRODUCTION = 500; // 500 is the base value

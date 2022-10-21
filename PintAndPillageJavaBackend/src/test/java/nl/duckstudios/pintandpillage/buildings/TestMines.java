@@ -44,7 +44,7 @@ public class TestMines {
     }
 
     @Test
-    public void increasedStoneProductionWithMine() {
+    public void shouldIncreaseStoneProduction_when_BuildingMine() {
         villageMock.createBuilding(createMine(1));
 
         Map<String, Integer> resourcesPerHour = villageMock.getResourcesPerHour();
@@ -56,7 +56,7 @@ public class TestMines {
     }
 
     @Test
-    public void increasedStoneProductionWithMultipleMines() {
+    public void should_IncreaseStoneProduction_with_multipleMines() {
         villageMock.createBuilding(createMine(1));
         villageMock.createBuilding(createMine(1));
         villageMock.createBuilding(createMine(1));
@@ -70,7 +70,7 @@ public class TestMines {
     }
 
     @Test
-    public void collectAfterHourToSeeProduction() {
+    public void should_increaseVillageResources_after_anHourOfProduction() {
 
         LocalDateTime oneHourBack = LocalDateTime.now().minusHours(1);
         this.testingMine.setLastCollected(oneHourBack);
@@ -84,7 +84,7 @@ public class TestMines {
 
     }
     @Test
-    public void noIncreasingStoneWithoutMines() {
+    public void should_notIncreaseStoneResources_without_mines() {
         villageMock.updateVillageState();
         int ACTUAL_STONE_PRODUCTION = villageMock.getVillageResources().get("Stone");
         int EXPECTED_STONE_PRODUCTION = 500; // 500 is the base value

@@ -24,7 +24,7 @@ public class TestBuildingPopulation {
     }
 
     @Test
-    public void populationShouldNotIncreaseWhenWeUpdateBuilding() {
+    public void should_notIncreasePopulation_whenUnderConstruction() {
         House house = new House();
         house.setLevel(1);
         house.setConstructionTimeSeconds(0);
