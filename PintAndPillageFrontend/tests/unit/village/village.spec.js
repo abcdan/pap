@@ -61,7 +61,7 @@ describe('Village', () => {
         expect(ACTUAL_TEXT).toBe(EXPECTED_TEXT)
     })
 
-    it('should now show tutorial on second login', async () => {
+    it('should not show tutorial on second login', async () => {
         const FIRST_LOGIN = false
         setup(FIRST_LOGIN)
 

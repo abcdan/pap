@@ -44,7 +44,7 @@ public class TestMines {
     }
 
     @Test
-    public void shouldIncreaseStoneProduction_when_BuildingMine() {
+    public void should_IncreaseStoneProduction_when_BuildingMine() {
         villageMock.createBuilding(createMine(1));
 
         Map<String, Integer> resourcesPerHour = villageMock.getResourcesPerHour();
